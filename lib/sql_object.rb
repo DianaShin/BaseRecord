@@ -2,6 +2,14 @@ require_relative 'db_connection'
 require 'active_support/inflector'
 
 class SQLObject
+  def self.table_name=(table_name)
+    @table_name = table_name
+  end
+
+  def self.table_name
+    @table_name ||= "#{self}".tableize
+  end
+  
   def self.columns
     table = table_name
     if @columns == nil
@@ -29,13 +37,6 @@ class SQLObject
 
   end
 
-  def self.table_name=(table_name)
-    @table_name = table_name
-  end
-
-  def self.table_name
-    @table_name ||= "#{self}".tableize
-  end
 
 
   def self.all
