@@ -9,7 +9,7 @@ class SQLObject
   def self.table_name
     @table_name ||= "#{self}".tableize
   end
-  
+
   def self.columns
     table = table_name
     if @columns == nil
@@ -37,7 +37,26 @@ class SQLObject
 
   end
 
+  def attributes
+    @attributes ||= {}
+  end
 
+  def attribute_values
+    self.class.columns.map do |column|
+      self.send(column)
+    end
+  end
+
+  def initialize(params = {})
+    params.each do |attr_name, value|
+      attr_name = attr_name.to_sym
+      if self.class.columns.include?(attr_name)
+        self.send("#{attr_name}=", value)
+      else
+        raise "unknown attribute '#{attr_name}'"
+      end
+    end
+  end
 
   def self.all
     table = table_name
@@ -71,26 +90,6 @@ class SQLObject
     parse_all(objs).first
   end
 
-  def initialize(params = {})
-    params.each do |attr_name, value|
-      attr_name = attr_name.to_sym
-      if self.class.columns.include?(attr_name)
-         self.send("#{attr_name}=", value)
-      else
-        raise "unknown attribute '#{attr_name}'"
-      end
-    end
-  end
-
-  def attributes
-       @attributes ||= {}
-  end
-
-  def attribute_values
-    self.class.columns.map do |column|
-      self.send(column)
-    end
-  end
 
   def insert
     table = self.class.table_name
