@@ -1,6 +1,6 @@
-# BaseNTableRM
+# BaseRecord
 
-BaseNTableRM is a lightweight Ruby object relational mapping (ORM) library that is based on Rails' ActiveRecord. It translates rows from a SqLite3 database into Ruby objects  while maintaining readability and DRYness of your code. 
+BaseRecord is a lightweight Ruby object relational mapping (ORM) library that is based on Rails' ActiveRecord. It translates rows from a SqLite3 database into Ruby objects  while maintaining readability and DRYness of your code. 
 
 It incorporates metaprogramming techniques, and allows you to perform database operations in an object-oriented manner without having to write SQL code!
 
@@ -19,7 +19,7 @@ It incorporates metaprogramming techniques, and allows you to perform database o
 4. Run ```load 'musicals_demo.rb'```.
 5. Use the API below to play around with the data.
 
-##API 
+## API 
 
 SQLObject provides similar core ActiveRecord associations as well as other methods to query the database: 
   * has_many
