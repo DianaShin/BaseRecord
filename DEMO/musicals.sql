@@ -1,23 +1,24 @@
-CREATE TABLE theme_songs (
+CREATE TABLE theme_songs(
   id INTEGER PRIMARY KEY,
   title VARCHAR(255) NOT NULL,
   musical_id INTEGER,
 
-  FOREIGN KEY(musical_id) REFERENCES musical(id)
+  FOREIGN KEY (musical_id) REFERENCES musical(id)
 );
 
-CREATE TABLE musicals (
+
+CREATE TABLE musicals(
   id INTEGER PRIMARY KEY,
   title VARCHAR(255) NOT NULL,
   composer_id INTEGER,
-
-  FOREIGN KEY(composer_id) REFERENCES composer(id)
+  FOREIGN KEY (composer_id) REFERENCES composer(id)
 );
 
-CREATE TABLE composers (
+
+CREATE TABLE composers(
   id INTEGER PRIMARY KEY,
   fname VARCHAR(255) NOT NULL,
-  lname VARCHAR(255) NOT NULL,
+  lname VARCHAR(255) NOT NULL
 );
 
 INSERT INTO
@@ -29,7 +30,7 @@ VALUES
   (4, "Music of the Night", 7),
   (5, "Guns and Ships", 1),
   (6, "I Still Believe", 2),
-  (7, "I Dreamed a Dream", 3)
+  (7, "I Dreamed a Dream", 3);
 
 INSERT INTO
   composers (id, fname, lname)
@@ -44,9 +45,9 @@ INSERT INTO
   musicals (id, title, composer_id)
 VALUES
   (1, "Waitress", 5),
-  (2, "Miss Saigon", 4)
-  (3, "Les Miserables", 4)
-  (4, "Hamilton", 1)
-  (5, "Cats", 3)
-  (6, "Wicked", 2)
-  (7, "Phantom of the Opera", 3)
+  (2, "Miss Saigon", 4),
+  (3, "Les Miserables", 4),
+  (4, "Hamilton", 1),
+  (5, "Cats", 3),
+  (6, "Wicked", 2),
+  (7, "Phantom of the Opera", 3);
