@@ -22,6 +22,10 @@ It incorporates metaprogramming techniques, and allows you to perform database o
 ## API 
 
 SQLObject provides similar core ActiveRecord associations as well as other methods to query the database: 
+  * ::columns -> Prints out a list of columns from given table
+  * ::all -> Finds all items
+  * ::where -> Fins all items that meet the query constraint 
+  * ::parse_all -> Take in an array and turns all items into table objects
   * has_many
   * belongs_to
   * has_one_through
