@@ -18,3 +18,18 @@ It incorporates metaprogramming techniques, and allows you to perform database o
 3. In terminal, navigate to the demo directory of this repo,  and then open pry or irb.
 4. Run ```load 'musicals_demo.rb'```.
 5. Use the API below to play around with the data.
+
+##API 
+
+SQLObject provides similar core ActiveRecord associations as well as other methods to query the database: 
+  * has_many
+  * belongs_to
+  * has_one_through
+  * ::first
+  * ::last
+  * ::find
+  * ::columns -> Prints out a list of columns from given table
+  * ::all -> Finds all items
+  * ::where -> Fins all items that meet the query constraint 
+  * ::parse_all -> Take in an array and turns all items into table objects
+
