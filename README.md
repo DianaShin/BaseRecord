@@ -9,7 +9,7 @@ It incorporates metaprogramming techniques, and allows you to perform database o
    * Implements the core functionality of ActiveRecord::Base.
    * Follows Ruby's 'convention over configuration' paradigm.
    * Utilizes SQLite3 (gem) and ActiveSupport::Inflector libraries. 
-   * Supports ActiveRecord's core associations, ```belongs_to```, ```has_many```, and ```has_one_through```, and provides sensible default class_name, foreign_key, and primary_key values if not provided by user
+   * Supports ActiveRecord's core associations, ```belongs_to```, ```has_many```, and ```has_one_through```, providing sensible default class_name, foreign_key, and primary_key values if not provided by user.
    
 ## DEMO 
 
