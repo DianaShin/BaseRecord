@@ -8,4 +8,4 @@ It incorporates metaprogramming techniques, and allows you to perform database o
 
    * Implements the core functionality of ActiveRecord::Base.
    * Follows Ruby's 'convention over configuration' paradigm.
-   * Utilizes SQLite3 and ActiveSupport::Inflector library. 
+   * Utilizes SQLite3 (gem) and ActiveSupport::Inflector libraries. 
