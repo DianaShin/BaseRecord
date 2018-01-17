@@ -19,7 +19,7 @@ It incorporates metaprogramming techniques, and allows you to perform database o
 4. Run ```load 'musicals_demo.rb'```.
 5. Use the API below to play around with the data.
 
-##API 
+## API 
 
 SQLObject provides similar core ActiveRecord associations as well as other methods to query the database: 
   * has_many
