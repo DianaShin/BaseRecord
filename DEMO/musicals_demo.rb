@@ -9,6 +9,6 @@ class Musical < SQLObject
   self.finalize!
 end
 
-class Playwright < SQLObject
-  self.finalize!
-end
+# class Songwriter < SQLObject
+#   self.finalize!
+# end
