@@ -24,8 +24,11 @@ class BelongsToOptions < AssocOptions
       :class_name => name.to_s.camelcase,
       :primary_key => :id
     }
-    defaults.keys.each do |key|
-      self.send("#{key}=", options[key] || defaults[key])
+      defaults.merge!(options)
+      @name = name
+      @foreign_key = defaults[:foreign_key]
+      @class_name = defaults[:class_name]
+      @primary_key = defaults[:primary_key]
     end
   end
 end
@@ -37,8 +40,11 @@ class HasManyOptions < AssocOptions
       :class_name => name.to_s.singularize.camelcase,
       :primary_key => :id
     }
-    defaults.keys.each do |key|
-      self.send("#{key}=", options[key] || defaults[key])
+      defaults.merge!(options)
+      @name = name
+      @foreign_key = defaults[:foreign_key]
+      @class_name = defaults[:class_name]
+      @primary_key = defaults[:primary_key]
     end
   end
 end
